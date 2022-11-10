@@ -1,0 +1,58 @@
+body {
+    background-color: #0E5E6F;
+    margin: 0;
+}
+
+h1 {
+    padding-top: 25%;
+}
+
+img {
+    display: block;
+    max-height: 500px;
+    max-width: 500px;
+    height: auto;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+table {
+    width: 75%;
+    background-color: #3A8891;
+}
+
+th, td {
+    color: #FFEFD6;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #F2DEBA;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.color-box {
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    background-color: #ccc;
+}
+
+.file-select {
+    padding-bottom: 25%;
+}
+
+.head {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-image: url("../images/vecteezy_colorful-low-poly-background-polygonal-design-pattern_7455521.jpg");
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    object-fit: cover;
+}

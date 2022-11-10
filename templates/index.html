@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Palette Generator</title>
+    <link rel="stylesheet" href="static/css/mystyles.css">
+</head>
+<body>
+    <div class="head">
+        <h1>Color Palette Generator</h1>
+
+        <div class="file-select">
+            <form method="post" action="/" enctype="multipart/form-data">
+                <input type="file", name="file" autocomplete="off" required>
+                <input type="submit", value="Upload">
+            </form>
+        </div>
+    </div>
+
+
+    {% if filename %}
+
+    <img src="{{url_for('display_image', filename=filename) }}" alt="">
+
+    <div>
+        <table class="center">
+            <tr>
+                <th>Color</th>
+                <th>Color Code</th>
+                <th>Percentage</th>
+            </tr>
+
+        {% for i in range(number_of_colors) %}
+            <tr>
+                <td><div class="color-box" style="background-color: #{{ colors_hex[i] }};"></div></td>
+                <td>#{{ colors_hex[i] }}</td>
+                <td>{{ rounded_color_proportions[i] }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+    {% endif %}
+
+</body>
+</html>
