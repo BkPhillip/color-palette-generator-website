@@ -1,39 +1,94 @@
+a:hover {
+    color: #0E5E6F;
+}
+
 body {
-    background-color: #0E5E6F;
+    background-color: #FFEFD6;
     margin: 0;
 }
 
 h1 {
-    padding-top: 25%;
+    padding-top: 100px;
+    color: #FFEFD6;
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
 }
 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+/****** Header ******/
+.head {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(#0E5E6F, #3A8891, #FFEFD6);
+}
+
+/****** Form ******/
+.file-select {
+    padding-bottom: 100px;
+}
+
+input[type=file] {
+    border: 2px solid #3A8891;
+    border-radius: 4px;
+    color: #0E5E6F;
+    background-color: #FFEFD6;
+}
+
+input::file-selector-button {
+    background-color: #0E5E6F;
+    color: #FFEFD6;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    background-color: #0E5E6F;
+    color: #FFEFD6;
+    border-radius: 4px;
+}
+
+.flashes {
+    text-align: center;
+    color: red;
+    list-style-type: none;
+}
+
+/****** Image ******/
 img {
     display: block;
     max-height: 500px;
     max-width: 500px;
     height: auto;
     width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
     margin-bottom: 5rem;
+    border-radius: 10px;
 }
 
+/****** Table ******/
 table {
     width: 75%;
-    background-color: #3A8891;
+    background-color: #F2DEBA;
+    margin-bottom: 5rem;
+    border-radius: 10px;
 }
 
 th, td {
-    color: #FFEFD6;
+    color: #0E5E6F;
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #F2DEBA;
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
+    border-bottom: 1px solid #0E5E6F;
 }
 
 .color-box {
@@ -43,16 +98,23 @@ th, td {
     background-color: #ccc;
 }
 
-.file-select {
-    padding-bottom: 25%;
+/****** Footer ******/
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height:2.5rem;
 }
 
-.head {
-    height: 100%;
-    width: 100%;
+.footer-container {
     text-align: center;
-    background-image: url("../images/vecteezy_colorful-low-poly-background-polygonal-design-pattern_7455521.jpg");
-    background-repeat: no-repeat;
-    background-color: #cccccc;
-    object-fit: cover;
+    color: #0E5E6F;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    background-image: linear-gradient(#FFEFD6, #3A8891, #0E5E6F);
+}
+
+.social-link {
+    font-size: 30px;
+    color: #FFEFD6;
 }

@@ -1,12 +1,18 @@
 import os
 from app import app
-import urllib.request
 from flask import Flask, render_template, redirect, url_for, flash, request
+from flask_apscheduler import APScheduler
 from werkzeug.utils import secure_filename
 import colorgram
 
 
-ALLOWED_EXTENSIONS = {'jpeg', 'jpg', 'png', 'gif'}
+ALLOWED_EXTENSIONS = {'jpeg', 'jpg', 'png', 'gif', "webp"}
+
+# Initialize scheduler
+scheduler = APScheduler()
+scheduler.api_enabled = True
+scheduler.init_app(app)
+scheduler.start()
 
 
 def allowed_file(filename):\
@@ -50,6 +56,15 @@ def upload_image():
 @app.route("/display/<filename>")
 def display_image(filename):
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
+
+
+# Scheduled function to delete all uploaded photos once a minute
+@scheduler.task('cron', id='delete', minute='*')
+def delete_images():
+    my_dir = os.getcwd() + '/static/uploads'
+    for f in os.listdir(my_dir):
+        os.remove(os.path.join(my_dir, f))
+    return
 
 
 if __name__ == "__main__":
